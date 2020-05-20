@@ -7,6 +7,7 @@ import third.part.entity.generic.BaseGeneric;
  * case3目标是测试泛型为原型
  */
 
+反注释下面的内容，开始case3的解决
 //@Pojo(protoTypeClass = Student.Inner.class)
 public class Student {
 
