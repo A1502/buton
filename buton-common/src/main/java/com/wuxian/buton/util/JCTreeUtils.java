@@ -33,7 +33,7 @@ public class JCTreeUtils {
         JCTree.JCExpression jcTypeExp = treeMaker.Type(type);
 
         //方法的访问级别
-        JCTree.JCModifiers modifiers = treeMaker.Modifiers(Flags.PUBLIC);
+        JCTree.JCModifiers modifiers = treeMaker.Modifiers(PropertyUtils.GETTER_SETTER_FLAG);
 
         //定义方法名
         Name methodName = butonContext.getNames().fromString(PropertyUtils.calcSetterName(fieldName));
@@ -89,7 +89,7 @@ public class JCTreeUtils {
         statements.append(treeMaker.Return(treeMaker.Select(treeMaker.Ident(butonContext.getNames().fromString(THIS)),
                 fieldNameObj)));
         JCTree.JCBlock body = treeMaker.Block(0, statements.toList());
-        return treeMaker.MethodDef(treeMaker.Modifiers(Flags.PUBLIC),
+        return treeMaker.MethodDef(treeMaker.Modifiers(PropertyUtils.GETTER_SETTER_FLAG),
                 methodName, jcTypeExp,
                 List.nil(), List.nil(), List.nil(), body, null);
     }

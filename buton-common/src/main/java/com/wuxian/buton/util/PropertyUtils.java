@@ -1,5 +1,6 @@
 package com.wuxian.buton.util;
 
+import com.sun.tools.javac.code.Flags;
 import com.sun.tools.javac.code.Symbol;
 import com.sun.tools.javac.code.Type;
 
@@ -12,6 +13,8 @@ import java.util.List;
 import java.util.Map;
 
 public class PropertyUtils {
+
+    public static final int GETTER_SETTER_FLAG = Flags.PUBLIC;
 
     private static final String IS = "is";
     private static final String GET = "get";
